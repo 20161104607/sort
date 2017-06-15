@@ -26,7 +26,7 @@ int main()
     }
     for(j=0;j<=9;j++)
     {
-        for(i=0;i<8-j;i++)
+        for(i=0;i<9-j;i++)
         {
             if(a[i]>a[i+1])
             {
