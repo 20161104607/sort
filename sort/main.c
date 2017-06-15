@@ -10,8 +10,8 @@
 
 int main()
     {
-    int i,j,temp;
-    int a[10];
+    int n,i,j,temp;
+    int a[20];
     FILE *fp1,*fp2;
         fp1=fopen("//Users//a20161104607//Desktop//sort//numberout.txt ","w");
         fp2=fopen("//Users//a20161104607//Desktop//sort//number.txt ","r");
@@ -19,14 +19,18 @@ int main()
         {
             printf("打开文件错误");
         }
+        else
+        {
+            while(fscanf(fp2,"%d",&n)!=EOF）
+        }
    //printf("input 10 numbers:\n");
-    for(i=0;i<10;i++)
+    for(i=0;i<n;i++)
         {
         fscanf(fp2,"%d",&a[i]);
-    }
-    for(j=0;j<=9;j++)
+        }
+    for(j=0;j<=n-1;j++)
     {
-        for(i=0;i<9-j;i++)
+        for(i=0;i<n-1-j;i++)
         {
             if(a[i]>a[i+1])
             {
@@ -36,7 +40,7 @@ int main()
             }
         }
     }
-        for(i=0;i<10;i++)
+        for(i=0;i<n;i++)
         {
             printf("%d\t",a[i]);
             fprintf(fp1,"%d ",a[i]);
@@ -44,6 +48,10 @@ int main()
         }
     printf("\n");
     fprintf(fp1,"\n");
+      }
+        fclose(fp1);
+        fclose(fp2);
+     }
     return 0;
     
     }
