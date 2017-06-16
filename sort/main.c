@@ -10,8 +10,8 @@
 
 int main()
     {
-    int n,i,j,temp;
-    int a[20];
+    int n,k,i,j,temp;
+    int a[15];
     FILE *fp1,*fp2;
         fp1=fopen("//Users//a20161104607//Desktop//sort//numberout.txt ","w");
         fp2=fopen("//Users//a20161104607//Desktop//sort//number.txt ","r");
@@ -21,33 +21,35 @@ int main()
         }
         else
         {
-            while(fscanf(fp2,"%d",&n)!=EOF）
-        }
-   //printf("input 10 numbers:\n");
-    for(i=0;i<n;i++)
+          while(fscanf(fp2,"%d",&n)!=EOF)
         {
-        fscanf(fp2,"%d",&a[i]);
-        }
-    for(j=0;j<=n-1;j++)
-    {
-        for(i=0;i<n-1-j;i++)
-        {
-            if(a[i]>a[i+1])
-            {
-                temp=a[i];
-                a[i]=a[i+1];
-                a[i+1]=temp;
-            }
-        }
-    }
         for(i=0;i<n;i++)
+       {
+       fscanf(fp2,"%d",&a[i]);
+       }
+           for(j=0;j<n-1;j++)
+            {
+                for(k=0;k<n-1-j;k++)
+                {
+                   if(a[k]>a[k+1])
+                   {
+                       temp=a[k];
+                       a[k]=a[k+1];
+                       a[k+1]=temp;
+                   }
+                      
+                }
+           }
+
+        for(k=0;k<n;k++)
         {
-            printf("%d\t",a[i]);
-            fprintf(fp1,"%d ",a[i]);
-            printf(" ");
+            printf("%d ",a[k]);
+            fprintf(fp1,"%d ",a[k]);
         }
-    printf("\n");
-    fprintf(fp1,"\n");
+            
+            fprintf(fp1,"\n");
+            printf("\n");
+    
       }
         fclose(fp1);
         fclose(fp2);
@@ -55,4 +57,5 @@ int main()
     return 0;
     
     }
+
 
